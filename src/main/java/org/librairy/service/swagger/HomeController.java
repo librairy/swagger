@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @RequestMapping(value = "/")
     public String index() {
-        return "redirect:api.html";
+        return "redirect:/api.html";
     }
 }
