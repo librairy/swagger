@@ -125,9 +125,12 @@
 <script>
   window.onload = function() {
 
+    origin = window.location.href
+    path = origin.substring(0, origin.lastIndexOf('/'));
+
     // Build a system
     const ui = SwaggerUIBundle({
-      url: window.location.origin + "/v2/api-docs",
+      url: path + "/v2/api-docs",
       dom_id: '#swagger-ui',
       deepLinking: true,
       presets: [
