@@ -22,31 +22,31 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig extends WebMvcConfigurationSupport{
 
     @Value("${swagger.base.package}")
-    String basePackage;
+    protected String basePackage;
 
     @Value("${swagger.title}")
-    String title;
+    protected String title;
 
     @Value("${swagger.description}")
-    String description;
+    protected String description;
 
     @Value("${swagger.contact.name}")
-    String contactName;
+    protected String contactName;
 
     @Value("${swagger.contact.email}")
-    String contactEmail;
+    protected String contactEmail;
 
     @Value("${swagger.contact.url}")
-    String contactUrl;
+    protected String contactUrl;
 
     @Value("${swagger.license.name}")
-    String licenseName;
+    protected String licenseName;
 
     @Value("${swagger.license.url}")
-    String licenseUrl;
+    protected String licenseUrl;
 
     @Value("${swagger.version}")
-    String version;
+    protected String version;
 
     @Bean
     public Docket documentation() {
@@ -61,7 +61,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport{
                 ;
     }
 
-    private ApiInfo metadata() {
+    protected ApiInfo metadata() {
         return new ApiInfoBuilder()
                 .title(title)
                 .description(description)
