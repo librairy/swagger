@@ -1,10 +1,14 @@
 package org.librairy.service.swagger;
 
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.thymeleaf.util.StringUtils;
+import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -51,9 +55,16 @@ public class SwaggerConfig extends WebMvcConfigurationSupport{
 
     @Bean
     public Docket documentation() {
+
+        Predicate<RequestHandler> apis = RequestHandlerSelectors.basePackage(basePackage);
+
+        if (basePackage.contains(",")){
+            apis = Predicates.or(RequestHandlerSelectors.basePackage(StringUtils.substringBefore(basePackage,",")),RequestHandlerSelectors.basePackage(StringUtils.substringAfter(basePackage,",")));
+        }
+
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(basePackage))
+                .apis(apis)
                 .build()
                 .enable(true)
                 .apiInfo(metadata())
