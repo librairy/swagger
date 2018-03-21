@@ -21,28 +21,29 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 public class SwaggerConfig extends WebMvcConfigurationSupport{
 
-    @Value("${swagger.base.package}")
+
+    @Value("#{environment['SWAGGER_BASE_PACKAGE']?:'${swagger.base.package}'}")
     protected String basePackage;
 
-    @Value("${swagger.title}")
+    @Value("#{environment['SWAGGER_TITLE']?:'${swagger.title}'}")
     protected String title;
 
-    @Value("${swagger.description}")
+    @Value("#{environment['SWAGGER_DESCRIPTION']?:'${swagger.description}'}")
     protected String description;
 
-    @Value("${swagger.contact.name}")
+    @Value("#{environment['SWAGGER_CONTACT_NAME']?:'${swagger.contact.name}'}")
     protected String contactName;
 
-    @Value("${swagger.contact.email}")
+    @Value("#{environment['SWAGGER_CONTACT_EMAIL']?:'${swagger.contact.email}'}")
     protected String contactEmail;
 
-    @Value("${swagger.contact.url}")
+    @Value("#{environment['SWAGGER_CONTACT_URL']?:'${swagger.contact.url}'}")
     protected String contactUrl;
 
-    @Value("${swagger.license.name}")
+    @Value("#{environment['SWAGGER_LICENSE_NAME']?:'${swagger.license.name}'}")
     protected String licenseName;
 
-    @Value("${swagger.license.url}")
+    @Value("#{environment['SWAGGER_LICENSE_URL']?:'${swagger.license.url}'}")
     protected String licenseUrl;
 
     @Value("${swagger.version}")
