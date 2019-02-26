@@ -65,7 +65,7 @@
         <joda.version>2.9.9</joda.version>
         <junit.version>4.12</junit.version>
 		<spring.version>1.5.9.RELEASE</spring.version>
-        <springfox.version>2.7.0</springfox.version>
+        <springfox.version>2.9.2</springfox.version><!-- 2.7.0 -->
         <unirest.version>1.4.9</unirest.version>
     </properties>
 
