@@ -62,6 +62,7 @@
         <!-- Project Dependencies -->
         <!--<breeze.version>0.13.1</breeze.version>&lt;!&ndash; 0.11.2&ndash;&gt;-->
         <commons-lang3.version>3.5</commons-lang3.version>
+        <guava.version>23.0</guava.version>
         <joda.version>2.9.9</joda.version>
         <junit.version>4.12</junit.version>
 		<spring.version>1.5.9.RELEASE</spring.version>
@@ -94,6 +95,12 @@
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>${joda.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId> com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
 
         </dependencies>
