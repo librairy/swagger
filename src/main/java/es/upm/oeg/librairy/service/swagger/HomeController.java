@@ -1,4 +1,4 @@
-package org.librairy.service.swagger;
+package es.upm.oeg.librairy.service.swagger;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;

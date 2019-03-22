@@ -1,4 +1,4 @@
-package org.librairy.service.swagger;
+package es.upm.oeg.librairy.service.swagger;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;

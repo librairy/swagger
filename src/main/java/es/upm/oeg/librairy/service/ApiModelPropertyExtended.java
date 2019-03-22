@@ -1,4 +1,4 @@
-package org.librairy.service;
+package es.upm.oeg.librairy.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

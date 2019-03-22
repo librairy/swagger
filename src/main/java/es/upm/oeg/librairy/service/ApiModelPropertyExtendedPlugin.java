@@ -1,7 +1,5 @@
-package org.librairy.service;
+package es.upm.oeg.librairy.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.introspect.BeanPropertyDefinition;
 import com.google.common.base.Optional;
 import org.springframework.core.annotation.Order;
