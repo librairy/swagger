@@ -62,10 +62,10 @@
         <!-- Project Dependencies -->
         <!--<breeze.version>0.13.1</breeze.version>&lt;!&ndash; 0.11.2&ndash;&gt;-->
         <commons-lang3.version>3.5</commons-lang3.version>
-        <guava.version>23.0</guava.version>
         <joda.version>2.9.9</joda.version>
         <junit.version>4.12</junit.version>
-		<spring.version>1.5.9.RELEASE</spring.version>
+        <spring.version>4.3.13.RELEASE</spring.version>
+		<springboot.version>1.5.9.RELEASE</springboot.version>
         <springfox.version>2.9.2</springfox.version><!-- 2.7.0 -->
         <unirest.version>1.4.9</unirest.version>
     </properties>
@@ -76,7 +76,7 @@
             <dependency>
 	            <groupId>org.springframework.boot</groupId>
 	            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-                <version>${spring.version}</version>
+                <version>${springboot.version}</version>
             </dependency>
 
             <dependency>
@@ -98,9 +98,36 @@
             </dependency>
 
             <dependency>
-                <groupId> com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-test</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.mashape.unirest</groupId>
+                <artifactId>unirest-java</artifactId>
+                <version>${unirest.version}</version>
             </dependency>
 
         </dependencies>
@@ -127,6 +154,37 @@
             <artifactId>joda-time</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -142,6 +200,18 @@
                     <source>${project.java.version}</source>
                     <target>${project.java.version}</target>
                     <compilerVersion>${project.java.version}</compilerVersion>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Test Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.11</version>
+                <configuration>
+                    <excludes>
+                        <exclude>%regex[.*IntTest.*]</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
 
