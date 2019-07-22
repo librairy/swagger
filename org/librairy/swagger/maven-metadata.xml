@@ -3,10 +3,10 @@
   <groupId>org.librairy</groupId>
   <artifactId>swagger</artifactId>
   <versioning>
-    <release>0.5</release>
+    <release>0.6</release>
     <versions>
-      <version>0.5</version>
+      <version>0.6</version>
     </versions>
-    <lastUpdated>20190322115113</lastUpdated>
+    <lastUpdated>20190722101516</lastUpdated>
   </versioning>
 </metadata>
