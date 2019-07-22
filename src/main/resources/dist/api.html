@@ -63,6 +63,21 @@
       margin:0 auto;
     }
 
+    blockquote {
+      font: 14px/22px normal helvetica, sans-serif;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 50px;
+      padding-left: 15px;
+      border-left: 3px solid #ccc;
+    }
+
+    blockquote-header {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 30px;
+      padding-left: 15px;
+    }
   </style>
 </head>
 
@@ -113,6 +128,21 @@
 
 <div id="swagger-ui"></div>
 
+
+<div id="citePaper" class="swagger-ui">
+  <div id="cite">
+    <blockquote-header>
+      If you are using the service, or dealing in depth with particular models, you are very welcome to cite the paper:
+    </blockquote-header>
+    <blockquote>
+      Carlos Badenes-Olmedo, Jose Luis Redondo-Garcia, and Oscar Corcho. 2017. <b>Distributing Text Mining tasks with librAIry.</b> In Proceedings of the 2017 ACM Symposium on Document Engineering (DocEng 17). ACM, New York, NY, USA, 63-66. <a href="https://doi.org/10.1145/3103010.3121040">[DOI]</a><a href="http://cbadenes.github.io/papers/2017-librairy.pdf">[PDF]</a>
+    </blockquote>
+  </br>
+  </div>
+</div>
+
+<hr style="width: 100%; color: black; height: 1px; background-color:black;" />
+
 <div id="wrapperFooter">
   <div id="footer">
     <a href="http://www.oeg-upm.net"> <img src="footer.png" alt="oeg" /> </a>
@@ -132,6 +162,7 @@
     const ui = SwaggerUIBundle({
       url: path + "/v2/api-docs",
       dom_id: '#swagger-ui',
+      docExpansion: 'none',
       deepLinking: true,
       presets: [
         SwaggerUIBundle.presets.apis,
